@@ -1,2 +1,6 @@
 # makeup-ui
-Accessible web components (mono-repo)
+
+Experimental testing ground for accessible web components (mono-repo).
+
+* [makeup-switch-class](packages/makeup-switch-class)
+* [makeup-switch-element](packages/makeup-switch-element)

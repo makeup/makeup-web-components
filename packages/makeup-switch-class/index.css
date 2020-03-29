@@ -1,0 +1,22 @@
+header,
+main {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0 auto;
+    max-width: 320px;
+    padding: 0;
+}
+li {
+    align-items: center;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    display: flex;
+    margin: 4px 0;
+    padding: 4px 8px;
+}
+
+span.ebayui-switch {
+    margin-left: auto;
+}
