@@ -1,4 +1,4 @@
-class MakeupUISwitchClass {
+class MakeupSwitchClass {
 
     constructor(el, customElementMode) {
         this.el = el;

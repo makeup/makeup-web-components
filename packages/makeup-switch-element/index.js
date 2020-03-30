@@ -1,4 +1,4 @@
-class MakeupUISwitchElement extends HTMLElement {
+class MakeupSwitchElement extends HTMLElement {
 
     static get observedAttributes() {
         return [
@@ -115,8 +115,8 @@ class MakeupUISwitchElement extends HTMLElement {
           </span>
         `;
 
-        this.model = new MakeupUISwitchClass(this.shadowRoot.querySelector('.makeup-switch'), true);
+        this.model = new MakeupSwitchClass(this.shadowRoot.querySelector('.makeup-switch'), true);
     }
 }
 
-window.customElements.define('makeup-switch', MakeupUISwitchElement);
+window.customElements.define('makeup-switch', MakeupSwitchElement);
