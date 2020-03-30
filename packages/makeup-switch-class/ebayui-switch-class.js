@@ -1,4 +1,4 @@
-class EbayUISwitchClass {
+class MakeupUISwitchClass {
 
     constructor(el, customElementMode) {
         this.el = el;
@@ -65,7 +65,7 @@ class EbayUISwitchClass {
     };
 
     get _focusableElement() {
-        return this.el.querySelector('.ebayui-switch__control');
+        return this.el.querySelector('.makeup-switch__control');
     }
 
     set checked(isChecked) {

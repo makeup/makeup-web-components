@@ -1,9 +1,9 @@
-ebayui-switch[placeholder="true"] {
+makeup-switch[placeholder="true"] {
     align-items: center;
     display: inline-flex;
     height: 40px;
 }
-ebayui-switch[placeholder="true"]::after {
+makeup-switch[placeholder="true"]::after {
     background-color: #eee;
     border-radius: 400px;
     content: '';

@@ -1,4 +1,4 @@
-class EbayUISwitchElement extends HTMLElement {
+class MakeupUISwitchElement extends HTMLElement {
 
     static get observedAttributes() {
         return [
@@ -43,14 +43,14 @@ class EbayUISwitchElement extends HTMLElement {
               @import '../makeup-switch-style/switch.css';
           </style>
 
-          <span class="ebayui-switch">
-            <span class="ebayui-switch__control" role="switch" tabindex="0" aria-checked="false"></span>
-            <span class="ebayui-switch__button"></span>
+          <span class="makeup-switch">
+            <span class="makeup-switch__control" role="switch" tabindex="0" aria-checked="false"></span>
+            <span class="makeup-switch__button"></span>
           </span>
         `;
 
-        this.model = new EbayUISwitchClass(this.shadowRoot.querySelector('.ebayui-switch'), true);
+        this.model = new MakeupUISwitchClass(this.shadowRoot.querySelector('.makeup-switch'), true);
     }
 }
 
-window.customElements.define('ebayui-switch', EbayUISwitchElement);
+window.customElements.define('makeup-switch', MakeupUISwitchElement);

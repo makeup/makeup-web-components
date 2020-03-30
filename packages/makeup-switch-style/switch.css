@@ -1,10 +1,10 @@
-.ebayui-switch {
+.makeup-switch {
   display: inline-flex;
   height: 40px;
   position: relative;
   vertical-align: middle;
 }
-.ebayui-switch__button {
+.makeup-switch__button {
   align-self: center;
   background: gray none repeat scroll 0 0;
   background-color: #767676;
@@ -17,7 +17,7 @@
   transition: left 0.15s ease-out 0s;
   width: 40px;
 }
-.ebayui-switch__button::after {
+.makeup-switch__button::after {
   background: white none repeat scroll 0 0;
   background-color: #fff;
   border-radius: 50%;
@@ -31,7 +31,7 @@
   transition: left 0.15s ease-out 0s;
   width: 18px;
 }
-.ebayui-switch__control {
+.makeup-switch__control {
   height: 24px;
   left: 0;
   margin: 0;
@@ -42,15 +42,15 @@
   width: 40px;
   z-index: 1;
 }
-.ebayui-switch__control:focus + .ebayui-switch__button {
+.makeup-switch__control:focus + .makeup-switch__button {
   outline: 1px dotted #767676;
 }
-.ebayui-switch__control[aria-disabled="true"] + .ebayui-switch__button {
+.makeup-switch__control[aria-disabled="true"] + .makeup-switch__button {
   background-color: #c7c7c7;
 }
-.ebayui-switch__control[aria-checked="true"] + .ebayui-switch__button::after {
+.makeup-switch__control[aria-checked="true"] + .makeup-switch__button::after {
   left: 19px;
 }
-.ebayui-switch__control:not([aria-disabled="true"])[aria-checked="true"] + .ebayui-switch__button {
+.makeup-switch__control:not([aria-disabled="true"])[aria-checked="true"] + .makeup-switch__button {
   background-color: #3665f3;
 }
