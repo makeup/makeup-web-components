@@ -40,6 +40,13 @@ class MakeupUISwitchElement extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
           <style>
+              makeup-switch {
+                 --switch-background-color-checked: #3665f3;
+                 --switch-background-color-unchecked: #767676;
+                 --switch-background-color-disabled: #c7c7c7;
+                 --switch-foreground-color: #fff;
+              }
+
               .makeup-switch {
                 display: inline-flex;
                 height: 40px;
