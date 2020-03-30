@@ -2,27 +2,32 @@ class MakeupUISwitchClass {
 
     constructor(el, customElementMode) {
         this.el = el;
+        this.customElementMode = customElementMode;
 
-        this._observer = new MutationObserver(this._onMutation);
         this._onClickListener = this._onClick.bind(this);
         this._onKeyDownListener = this._onKeyDown.bind(this);
 
         if (!customElementMode) {
+            this._mutationObserver = new MutationObserver(this._onMutation);
             this._observeMutations();
             this._observeEvents();
         }
     }
 
     _observeMutations() {
-        this._observer.observe(this._focusableElement, {
-            attributes: true,
-            childList: false,
-            subtree: false
-        });
+        if (!this.customElementMode) {
+            this._mutationObserver.observe(this._focusableElement, {
+                attributes: true,
+                childList: false,
+                subtree: false
+            });
+        }
     }
 
     _unobserveMutations() {
-        this._observer.disconnect();
+        if (!this.customElementMode) {
+            this._mutationObserver.disconnect();
+        }
     }
 
     _observeEvents() {
