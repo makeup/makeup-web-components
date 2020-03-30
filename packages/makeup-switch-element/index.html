@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>makeup-switch-element</title>
-        <link href="index.css" rel="stylesheet" />
+        <link href="../makeup-switch-style/docs.css" rel="stylesheet" />
         <link href="../makeup-switch-style/placeholder.css" rel="stylesheet" />
     </head>
     <body>
@@ -25,8 +25,14 @@
                 </li>
             </ul>
         </main>
-        <script src="../makeup-switch-class/ebayui-switch-class.js"></script>
-        <script src="ebayui-switch-element.js"></script>
-        <script src="index.js"></script>
+        <script src="../makeup-switch-class/switch-class.js"></script>
+        <script src="switch-element.js"></script>
+        <script>
+            window.onload = function(e) {
+                document.querySelectorAll('makeup-switch').forEach(function(e, i) {
+                    console.log(e, i);
+                });
+            };
+        </script>
     </body>
 </html>

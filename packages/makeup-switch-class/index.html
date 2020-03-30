@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>makeup-switch-class</title>
-        <link href="index.css" rel="stylesheet" />
+        <link href="../makeup-switch-style/docs.css" rel="stylesheet" />
         <link href="../makeup-switch-style/switch.css" rel="stylesheet" />
     </head>
     <body>
@@ -34,7 +34,13 @@
                 </li>
             </ul>
         </main>
-        <script src="ebayui-switch-class.js"></script>
-        <script src="index.js"></script>
+        <script src="switch-class.js"></script>
+        <script>
+            window.onload = function(e) {
+                document.querySelectorAll('.makeup-switch').forEach(function(e, i) {
+                    const widget = new MakeupUISwitchClass(e);
+                });
+            };
+        </script>
     </body>
 </html>
