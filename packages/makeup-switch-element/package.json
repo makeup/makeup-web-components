@@ -7,7 +7,7 @@
   "author": "Ian McBurnie <ianmcburnie@hotmail.com>",
   "license": "MIT",
   "dependencies": {
-      "makeup-switch-class": "~0.0.1"
+    "makeup-switch-class": "~0.0.1"
   },
   "files": [
     "index.js",
