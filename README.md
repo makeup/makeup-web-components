@@ -3,6 +3,5 @@
 Experimental testing ground for accessible web components (mono-repo).
 
 * ARIA Switch
-   * [makeup-switch-class](docs/makeup-switch-class)
-   * [makeup-switch-element](docs/makeup-switch-element)
-   * [makeup-switch-style](packages/makeup-switch-style)
+   * [makeup-switch-class](https://makeup.github.io/makeup-ui/makeup-switch-class/index.html)
+   * [makeup-switch-element](https://makeup.github.io/makeup-ui/makeup-switch-element/index.html)
