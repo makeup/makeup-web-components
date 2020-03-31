@@ -2,10 +2,9 @@
 
 const BEM = {
     CONTROL: '.makeup-switch__control'
-}
+};
 
 module.exports = class {
-
     constructor(el, customElementMode) {
         this.el = el;
         this.customElementMode = customElementMode;
@@ -68,12 +67,12 @@ module.exports = class {
     }
 
     _onMutation(mutationsList, observer) {
-        for(let mutation of mutationsList) {
+        for (const mutation of mutationsList) {
             if (mutation.type === 'attributes') {
                 // console.log(mutation);
             }
         }
-    };
+    }
 
     get _focusableElement() {
         return this.el.querySelector(BEM.CONTROL);
@@ -111,4 +110,4 @@ module.exports = class {
             this.checked = !(this.checked);
         }
     }
-}
+};
