@@ -7,6 +7,8 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -15,20 +17,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var CustomEvent = require('custom-event');
 
-var BEM = {
-  CONTROL: '.makeup-switch__control'
+var defaultOptions = {
+  bem: {
+    control: '.makeup-switch__control'
+  },
+  customElementMode: false
 };
 
 module.exports = /*#__PURE__*/function () {
-  function _class(el, customElementMode) {
+  function _class(el, selectedOptions) {
     _classCallCheck(this, _class);
 
+    this.options = _extends({}, defaultOptions, selectedOptions);
     this.el = el;
-    this.customElementMode = customElementMode;
     this._onClickListener = this._onClick.bind(this);
     this._onKeyDownListener = this._onKeyDown.bind(this);
 
-    if (!customElementMode) {
+    if (!this.options.customElementMode) {
       this._mutationObserver = new MutationObserver(this._onMutation);
 
       this._observeMutations();
@@ -40,7 +45,7 @@ module.exports = /*#__PURE__*/function () {
   _createClass(_class, [{
     key: "_observeMutations",
     value: function _observeMutations() {
-      if (!this.customElementMode) {
+      if (!this.options.customElementMode) {
         this._mutationObserver.observe(this._focusableElement, {
           attributes: true,
           childList: false,
@@ -51,7 +56,7 @@ module.exports = /*#__PURE__*/function () {
   }, {
     key: "_unobserveMutations",
     value: function _unobserveMutations() {
-      if (!this.customElementMode) {
+      if (!this.options.customElementMode) {
         this._mutationObserver.disconnect();
       }
     }
@@ -129,7 +134,7 @@ module.exports = /*#__PURE__*/function () {
   }, {
     key: "_focusableElement",
     get: function get() {
-      return this.el.querySelector(BEM.CONTROL);
+      return this.el.querySelector(this.options.bem.control);
     }
   }, {
     key: "checked",

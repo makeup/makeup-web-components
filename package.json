@@ -19,6 +19,7 @@
         "@babel/core": "^7",
         "@babel/preset-env": "^7",
         "@ebay/browserslist-config": "^1",
+        "babel-plugin-transform-object-assign": "^6",
         "core-js-pure": "^3",
         "eslint": "^6",
         "eslint-config-ebay": "^1",

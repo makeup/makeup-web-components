@@ -4,19 +4,23 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
 const CustomEvent = require('custom-event');
 
-const BEM = {
-    CONTROL: '.makeup-switch__control'
+const defaultOptions = {
+    bem: {
+        control: '.makeup-switch__control'
+    },
+    customElementMode: false
 };
 
 module.exports = class {
-    constructor(el, customElementMode) {
+    constructor(el, selectedOptions) {
+        this.options = Object.assign({}, defaultOptions, selectedOptions);
+
         this.el = el;
-        this.customElementMode = customElementMode;
 
         this._onClickListener = this._onClick.bind(this);
         this._onKeyDownListener = this._onKeyDown.bind(this);
 
-        if (!customElementMode) {
+        if (!this.options.customElementMode) {
             this._mutationObserver = new MutationObserver(this._onMutation);
             this._observeMutations();
             this._observeEvents();
@@ -24,7 +28,7 @@ module.exports = class {
     }
 
     _observeMutations() {
-        if (!this.customElementMode) {
+        if (!this.options.customElementMode) {
             this._mutationObserver.observe(this._focusableElement, {
                 attributes: true,
                 childList: false,
@@ -34,7 +38,7 @@ module.exports = class {
     }
 
     _unobserveMutations() {
-        if (!this.customElementMode) {
+        if (!this.options.customElementMode) {
             this._mutationObserver.disconnect();
         }
     }
@@ -79,7 +83,7 @@ module.exports = class {
     }
 
     get _focusableElement() {
-        return this.el.querySelector(BEM.CONTROL);
+        return this.el.querySelector(this.options.bem.control);
     }
 
     set checked(isChecked) {

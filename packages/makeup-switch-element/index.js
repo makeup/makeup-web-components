@@ -149,7 +149,9 @@ class MakeupSwitchElement extends HTMLElement {
           </span>
         `;
 
-        this.model = new MakeupSwitchClass(this.shadowRoot.querySelector('.makeup-switch'), true);
+        this.model = new MakeupSwitchClass(this.shadowRoot.querySelector('.makeup-switch'), {
+            customElementMode: true
+        });
     }
 }
 
