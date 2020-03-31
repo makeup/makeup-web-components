@@ -7,9 +7,16 @@
         "aria"
     ],
     "scripts": {
-        "bundle": "webpack"
+        "bundle": "webpack",
+        "compile": "npm run compile:modules && npm run compile:docs",
+        "compile:docs": "babel docs --out-dir docs --out-file-extension .compiled.js --ignore 'docs/**/*.compiled.js','docs/**/*.min.js'",
+        "compile:modules": "lerna run compile"
     },
     "devDependencies": {
+        "@babel/cli": "^7",
+        "@babel/core": "^7",
+        "@babel/preset-env": "^7",
+        "core-js-pure": "^3",
         "@ebay/browserslist-config": "^1",
         "lerna": "^3",
         "webpack": "^4",
