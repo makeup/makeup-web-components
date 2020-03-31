@@ -134,11 +134,6 @@ module.exports = /*#__PURE__*/function () {
     value: function toggle() {
       if (!this.disabled) {
         this.checked = !this.checked;
-        this.el.dispatchEvent(new CustomEvent('makeup-switch-toggle', {
-          detail: {
-            value: this.checked ? 'on' : 'off'
-          }
-        }));
       }
     }
   }, {
@@ -152,6 +147,12 @@ module.exports = /*#__PURE__*/function () {
       this._unobserveMutations();
 
       this._focusableElement.setAttribute('aria-checked', isChecked.toString());
+
+      this.el.dispatchEvent(new CustomEvent('makeup-switch-toggle', {
+        detail: {
+          on: this.checked
+        }
+      }));
 
       this._observeMutations();
     },
