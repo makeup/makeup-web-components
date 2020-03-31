@@ -1,0 +1,21 @@
+{
+    "name": "root",
+    "private": true,
+    "keywords": [
+        "accessibility",
+        "a11y",
+        "aria"
+    ],
+    "scripts": {
+        "bundle": "webpack"
+    },
+    "devDependencies": {
+        "@ebay/browserslist-config": "^1",
+        "lerna": "^3",
+        "webpack": "^4",
+        "webpack-cli": "^3"
+    },
+    "browserslist": [
+        "extends @ebay/browserslist-config"
+    ]
+}

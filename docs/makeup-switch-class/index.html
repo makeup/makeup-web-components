@@ -2,9 +2,9 @@
 <html>
     <head>
         <title>makeup-switch-class</title>
-        <link href="../makeup-switch-style/docs.css" rel="stylesheet" />
-        <link href="../makeup-switch-style/switch.css" rel="stylesheet" />
-        <!-- <link href="../makeup-switch-style/theme-1.css" rel="stylesheet" /> -->
+        <link href="../../packages/makeup-switch-style/docs.css" rel="stylesheet" />
+        <link href="../../packages/makeup-switch-style/switch.css" rel="stylesheet" />
+        <!-- <link href="../../packages/makeup-switch-style/theme-1.css" rel="stylesheet" /> -->
     </head>
     <body>
         <header>
@@ -35,14 +35,6 @@
                 </li>
             </ul>
         </main>
-        <script src="index.js"></script>
-        <script>
-            window.onload = function(e) {
-                document.querySelectorAll('.makeup-switch').forEach(function(e, i) {
-                    const widget = new MakeupSwitchClass(e);
-                    console.log(widget);
-                });
-            };
-        </script>
+        <script src="index.min.js"></script>
     </body>
 </html>

@@ -1,4 +1,10 @@
-class MakeupSwitchClass {
+'use strict';
+
+const BEM = {
+    CONTROL: '.makeup-switch__control'
+}
+
+module.exports = class {
 
     constructor(el, customElementMode) {
         this.el = el;
@@ -64,13 +70,13 @@ class MakeupSwitchClass {
     _onMutation(mutationsList, observer) {
         for(let mutation of mutationsList) {
             if (mutation.type === 'attributes') {
-                console.log(mutation);
+                // console.log(mutation);
             }
         }
     };
 
     get _focusableElement() {
-        return this.el.querySelector('.makeup-switch__control');
+        return this.el.querySelector(BEM.CONTROL);
     }
 
     set checked(isChecked) {

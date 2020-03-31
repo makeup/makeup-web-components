@@ -1,3 +1,5 @@
+const MakeupSwitchClass = require('makeup-switch-class');
+
 class MakeupSwitchElement extends HTMLElement {
 
     static get observedAttributes() {
