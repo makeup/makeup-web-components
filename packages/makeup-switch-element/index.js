@@ -16,7 +16,7 @@ class MakeupSwitchElement extends HTMLElement {
     }
 
     disconnectedCallback(e) {
-        this.model._unobserveEvents();
+        this.model._destroy();
     }
 
     attributeChangedCallback(attr, oldVal, newVal) {

@@ -82,6 +82,13 @@ module.exports = class {
         }
     }
 
+    _destroy() {
+        this._unobserveMutations();
+        this._unobserveEvents();
+        this._onClickListener = null;
+        this._onKeyDownListener = null;
+    }
+
     get _focusableElement() {
         return this.el.querySelector(this.options.bem.control);
     }

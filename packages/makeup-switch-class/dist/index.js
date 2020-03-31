@@ -120,6 +120,16 @@ module.exports = /*#__PURE__*/function () {
       }
     }
   }, {
+    key: "_destroy",
+    value: function _destroy() {
+      this._unobserveMutations();
+
+      this._unobserveEvents();
+
+      this._onClickListener = null;
+      this._onKeyDownListener = null;
+    }
+  }, {
     key: "toggle",
     value: function toggle() {
       if (!this.disabled) {
