@@ -9,6 +9,9 @@
   "scripts": {
     "compile": "babel src/index.js --out-file dist/index.js"
   },
+  "dependencies": {
+    "custom-event": "^1"
+  },
   "files": [
     "index.js",
     "package-lock.json"

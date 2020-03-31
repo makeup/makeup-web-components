@@ -1,5 +1,9 @@
 'use strict';
 
+// requires CustomEvent polyfill for IE
+// https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
+const CustomEvent = require('custom-event');
+
 const BEM = {
     CONTROL: '.makeup-switch__control'
 };
@@ -109,5 +113,11 @@ module.exports = class {
         if (!this.disabled) {
             this.checked = !(this.checked);
         }
+
+        this.el.dispatchEvent(new CustomEvent('makeup-switch-toggle', {
+            detail: {
+                value: this.checked ? 'on' : 'off'
+            }
+        }));
     }
 };
