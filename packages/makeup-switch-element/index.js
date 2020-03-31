@@ -42,20 +42,33 @@ class MakeupSwitchElement extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
           <style>
-              makeup-switch {
-                 --switch-background-color-checked: #3665f3;
-                 --switch-background-color-unchecked: #767676;
-                 --switch-background-color-disabled: #c7c7c7;
-                 --switch-foreground-color: #fff;
-              }
-
               .makeup-switch {
-                display: inline-flex;
+                --switch-background-color-unchecked: #767676;
+                --switch-background-color-checked: #382aef;
+                --switch-background-color-disabled: #c7c7c7;
+                --switch-foreground-color: #fff;
+              }
+              @media (prefers-color-scheme: dark) {
+                .makeup-switch {
+                  --switch-background-color-checked: #5192ff;
+                }
+              }
+              .makeup-switch {
+                -webkit-box-sizing: border-box;
+                        box-sizing: border-box;
                 height: 40px;
                 position: relative;
                 vertical-align: middle;
               }
-              .makeup-switch__button {
+              div.makeup-switch {
+                display: -webkit-box;
+                display: flex;
+              }
+              span.makeup-switch {
+                display: -webkit-inline-box;
+                display: inline-flex;
+              }
+              span.makeup-switch__button {
                 align-self: center;
                 background: gray none repeat scroll 0 0;
                 background-color: #767676;
@@ -66,10 +79,11 @@ class MakeupSwitchElement extends HTMLElement {
                 height: 24px;
                 position: relative;
                 text-indent: 100%;
+                -webkit-transition: left 0.15s ease-out 0s;
                 transition: left 0.15s ease-out 0s;
                 width: 40px;
               }
-              .makeup-switch__button::after {
+              span.makeup-switch__button::after {
                 background: white none repeat scroll 0 0;
                 background-color: #fff;
                 background-color: var(--switch-foreground-color, #fff);
@@ -80,34 +94,52 @@ class MakeupSwitchElement extends HTMLElement {
                 left: 3px;
                 position: absolute;
                 top: 3px;
-                transform: translate3d(0, 0, 0);
+                -webkit-transform: translate3d(0, 0, 0);
+                        transform: translate3d(0, 0, 0);
+                -webkit-transition: left 0.15s ease-out 0s;
                 transition: left 0.15s ease-out 0s;
                 width: 18px;
               }
-              .makeup-switch__control {
+              input.makeup-switch__control,
+              span.makeup-switch__control {
                 height: 24px;
                 left: 0;
                 margin: 0;
-                opacity: 0;
                 padding: 0;
                 position: absolute;
                 top: 8px;
                 width: 40px;
                 z-index: 1;
               }
-              .makeup-switch__control:focus + .makeup-switch__button {
+              input.makeup-switch__control {
+                opacity: 0;
+              }
+              input.makeup-switch__control:focus + span.makeup-switch__button {
                 outline: 1px dotted #767676;
               }
-              .makeup-switch__control[aria-disabled="true"] + .makeup-switch__button {
+              input.makeup-switch__control[disabled] + span.makeup-switch__button {
                 background-color: #c7c7c7;
                 background-color: var(--switch-background-color-disabled, #c7c7c7);
               }
-              .makeup-switch__control[aria-checked="true"] + .makeup-switch__button::after {
+              input.makeup-switch__control:checked + span.makeup-switch__button::after {
                 left: 19px;
               }
-              .makeup-switch__control:not([aria-disabled="true"])[aria-checked="true"] + .makeup-switch__button {
+              span.makeup-switch__control[aria-disabled="true"] + span.makeup-switch__button {
+                background-color: #c7c7c7;
+                background-color: var(--switch-background-color-disabled, #c7c7c7);
+              }
+              span.makeup-switch__control[aria-checked="true"] + span.makeup-switch__button::after {
+                left: 19px;
+              }
+              input.makeup-switch__control:not([disabled]):checked + span.makeup-switch__button,
+              span.makeup-switch__control:not([aria-disabled="true"])[aria-checked="true"] + span.makeup-switch__button {
                 background-color: #3665f3;
                 background-color: var(--switch-background-color-checked, #3665f3);
+              }
+              @media screen and (-ms-high-contrast: active) {
+                input.makeup-switch__control {
+                  opacity: 1;
+                }
               }
           </style>
 
