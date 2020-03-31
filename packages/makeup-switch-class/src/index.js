@@ -112,12 +112,12 @@ module.exports = class {
     toggle() {
         if (!this.disabled) {
             this.checked = !(this.checked);
-        }
 
-        this.el.dispatchEvent(new CustomEvent('makeup-switch-toggle', {
-            detail: {
-                value: this.checked ? 'on' : 'off'
-            }
-        }));
+            this.el.dispatchEvent(new CustomEvent('makeup-switch-toggle', {
+                detail: {
+                    value: this.checked ? 'on' : 'off'
+                }
+            }));
+        }
     }
 };
