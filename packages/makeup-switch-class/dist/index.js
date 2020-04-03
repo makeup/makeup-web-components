@@ -19,7 +19,7 @@ var CustomEvent = require('custom-event');
 
 var defaultOptions = {
   bem: {
-    control: '.makeup-switch__control'
+    control: 'makeup-switch__control'
   },
   customElementMode: false
 };
@@ -146,7 +146,7 @@ module.exports = /*#__PURE__*/function () {
   }, {
     key: "_focusableElement",
     get: function get() {
-      return this.el.querySelector(this.options.bem.control);
+      return this.el.querySelector(".".concat(this.options.bem.control));
     }
   }, {
     key: "checked",

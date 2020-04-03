@@ -4,7 +4,7 @@ A JavaScript class that represents an ARIA switch. No CSS provided.
 
 ## Example
 
-Markup:
+The following markup is required. Classnames are configurable (see config section below).
 
 ```html
 <span id="label1">makeup-switch 1</span>
@@ -14,7 +14,9 @@ Markup:
 </span>
 ```
 
-NOTE: the classnames are currently hardcoded, and not configurable. This feature will be added soon via a config parameter.
+Style:
+
+No CSS is provided. However, the class is fully compatible with [eBay Skin](https://ebay.github.io/skin/#switch).
 
 Script:
 
@@ -22,13 +24,27 @@ Script:
 const MakeupSwitchClass = require('makeup-switch-class');
 
 document.querySelectorAll('.makeup-switch').forEach(function(el, i) {
-    const widget = new MakeupSwitchClass(el);
+    const widget = new MakeupSwitchClass(el, config);
 
     el.addEventListener('makeup-switch-toggle', function(e) {
         console.log(e.type, e.detail);
     });
 });
 ```
+
+## Config
+
+The constructor takes a configuration object as its second parameter.
+
+### customElementMode
+
+Set to true if using the class as the model for a custom element (aka Web Component)
+
+### bem
+
+Use this object to specify your custom classnames (i.e. if you don't wish to use the default `makeup-switch` prefixes).
+
+* `bem.control`: classname for the focusable element (default: `makeup-switch__control`)
 
 ## Events
 

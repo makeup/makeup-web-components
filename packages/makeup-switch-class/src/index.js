@@ -6,7 +6,7 @@ const CustomEvent = require('custom-event');
 
 const defaultOptions = {
     bem: {
-        control: '.makeup-switch__control'
+        control: 'makeup-switch__control'
     },
     customElementMode: false
 };
@@ -96,7 +96,7 @@ module.exports = class {
     }
 
     get _focusableElement() {
-        return this.el.querySelector(this.options.bem.control);
+        return this.el.querySelector(`.${this.options.bem.control}`);
     }
 
     set checked(isChecked) {
