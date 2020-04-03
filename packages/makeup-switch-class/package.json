@@ -1,7 +1,7 @@
 {
   "name": "makeup-switch-class",
   "description": "A class representing an ARIA switch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "repository": "https://github.com/makeup-ui/makeup-ui/tree/master/packages/makeup-switch-class",
   "author": "Ian McBurnie <ianmcburnie@hotmail.com>",
