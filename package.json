@@ -12,7 +12,10 @@
         "compile": "npm run compile:modules && npm run compile:docs",
         "compile:docs": "babel docs --out-dir docs --out-file-extension .compiled.js --ignore 'docs/**/*.compiled.js','docs/**/*.min.js'",
         "compile:modules": "lerna run compile",
-        "lint": "eslint packages/**/src/index.js > lint.log"
+        "lint": "eslint packages/**/src/index.js > lint.log",
+        "server": "browser-sync start -s --ss docs --index docs/index.html --files docs/**/index.html docs/**/index.min.js",
+        "start": "npm run build && run-p server watch",
+        "watch": "onchange packages/**/src/index.js docs/**/index.js -- npm run build"
     },
     "devDependencies": {
         "@babel/cli": "^7",
@@ -20,11 +23,14 @@
         "@babel/preset-env": "^7",
         "@ebay/browserslist-config": "^1",
         "babel-plugin-transform-object-assign": "^6",
+        "browser-sync": "^2",
         "core-js-pure": "^3",
         "eslint": "^6",
         "eslint-config-ebay": "^1",
         "lerna": "^3",
         "nodelist-foreach-polyfill": "^1",
+        "npm-run-all": "^4",
+        "onchange": "^6",
         "webpack": "^4",
         "webpack-cli": "^3"
     },

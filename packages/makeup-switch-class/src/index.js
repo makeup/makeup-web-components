@@ -19,9 +19,10 @@ module.exports = class {
 
         this._onClickListener = this._onClick.bind(this);
         this._onKeyDownListener = this._onKeyDown.bind(this);
+        this._onMutationListener = this._onMutation.bind(this);
 
         if (!this.options.customElementMode) {
-            this._mutationObserver = new MutationObserver(this._onMutation);
+            this._mutationObserver = new MutationObserver(this._onMutationListener);
             this._observeMutations();
             this._observeEvents();
         }
@@ -77,7 +78,11 @@ module.exports = class {
     _onMutation(mutationsList, observer) {
         for (const mutation of mutationsList) {
             if (mutation.type === 'attributes') {
-                // console.log(mutation);
+                this.el.dispatchEvent(new CustomEvent('makeup-switch-mutation', {
+                    detail: {
+                        attributeName: mutation.attributeName
+                    }
+                }));
             }
         }
     }
@@ -87,6 +92,7 @@ module.exports = class {
         this._unobserveEvents();
         this._onClickListener = null;
         this._onKeyDownListener = null;
+        this._onMutationListener = null;
     }
 
     get _focusableElement() {

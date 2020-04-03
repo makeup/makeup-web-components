@@ -32,9 +32,10 @@ module.exports = /*#__PURE__*/function () {
     this.el = el;
     this._onClickListener = this._onClick.bind(this);
     this._onKeyDownListener = this._onKeyDown.bind(this);
+    this._onMutationListener = this._onMutation.bind(this);
 
     if (!this.options.customElementMode) {
-      this._mutationObserver = new MutationObserver(this._onMutation);
+      this._mutationObserver = new MutationObserver(this._onMutationListener);
 
       this._observeMutations();
 
@@ -110,7 +111,12 @@ module.exports = /*#__PURE__*/function () {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
           var mutation = _step.value;
 
-          if (mutation.type === 'attributes') {// console.log(mutation);
+          if (mutation.type === 'attributes') {
+            this.el.dispatchEvent(new CustomEvent('makeup-switch-mutation', {
+              detail: {
+                attributeName: mutation.attributeName
+              }
+            }));
           }
         }
       } catch (err) {
@@ -128,6 +134,7 @@ module.exports = /*#__PURE__*/function () {
 
       this._onClickListener = null;
       this._onKeyDownListener = null;
+      this._onMutationListener = null;
     }
   }, {
     key: "toggle",
