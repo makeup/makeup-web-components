@@ -3,7 +3,7 @@ require('nodelist-foreach-polyfill');
 
 const MakeupSwitchClass = require('../../packages/makeup-switch-class');
 
-window.onload = function(e) {
+window.onload = function() {
     document.querySelectorAll('.makeup-switch').forEach(function(el, i) {
         const widget = new MakeupSwitchClass(el);
         console.log(widget);

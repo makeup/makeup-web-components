@@ -103,6 +103,7 @@ module.exports = class {
         this._unobserveMutations();
         this._focusableElement.setAttribute('aria-checked', isChecked.toString());
         this.el.dispatchEvent(new CustomEvent('makeup-switch-toggle', {
+            composed: true,
             detail: {
                 on: this.checked
             }
