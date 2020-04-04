@@ -1,7 +1,7 @@
 {
   "name": "makeup-switch-element",
   "description": "A web component representing an ARIA switch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "repository": "https://github.com/makeup-ui/makeup-ui/tree/master/packages/makeup-switch-element",
   "author": "Ian McBurnie <ianmcburnie@hotmail.com>",
@@ -10,7 +10,7 @@
     "compile": "babel src/index.js --out-file dist/index.js"
   },
   "dependencies": {
-    "makeup-switch-class": "~0.0.2"
+    "makeup-switch-class": "~0.0.4"
   },
   "files": [
     "index.js",
