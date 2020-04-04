@@ -129,6 +129,32 @@ module.exports = class {
     set labelledby(theId) {
         this._unobserveMutations();
         this._focusableElement.setAttribute('aria-labelledby', theId);
+
+        // customElementMode a11y workaround
+        // aria-labelledby cannot resolve element id references that live outside of the Shadow DOM
+        // as a workaround we can use aria-label
+        if (this.options.customElementMode) {
+            const labellingEl = document.getElementById(this.labelledby);
+
+            if (labellingEl && labellingEl.innerText !== '') {
+                this.label = labellingEl.innerText;
+            }
+        }
+
+        this._observeMutations();
+    }
+
+    get labelledby() {
+        return this._focusableElement.getAttribute('aria-labelledby');
+    }
+
+    get label() {
+        return this._focusableElement.getAttribute('aria-label');
+    }
+
+    set label(theLabel) {
+        this._unobserveMutations();
+        this._focusableElement.setAttribute('aria-label', theLabel);
         this._observeMutations();
     }
 

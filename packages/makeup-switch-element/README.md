@@ -11,8 +11,6 @@ Markup:
 <makeup-switch labelledby="label1" placeholder="true"></makeup-switch>
 ```
 
-NOTE: the classnames are currently hardcoded, and not configurable. This feature will be added soon via a config parameter.
-
 Style:
 
 The following custom properties are available:
@@ -38,9 +36,13 @@ document.querySelectorAll('makeup-switch').forEach(function(el, i) {
 
 ## Attributes
 
+### label
+
+The accessible label text. NOTE: `labelledby` is preferred.
+
 ### labelledby
 
-Specify the `id` of the labelling element.
+The `id` of the labelling element.
 
 ### placeholder
 

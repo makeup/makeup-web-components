@@ -186,7 +186,33 @@ module.exports = /*#__PURE__*/function () {
     set: function set(theId) {
       this._unobserveMutations();
 
-      this._focusableElement.setAttribute('aria-labelledby', theId);
+      this._focusableElement.setAttribute('aria-labelledby', theId); // customElementMode a11y workaround
+      // aria-labelledby cannot resolve element id references that live outside of the Shadow DOM
+      // as a workaround we can use aria-label
+
+
+      if (this.options.customElementMode) {
+        var labellingEl = document.getElementById(this.labelledby);
+
+        if (labellingEl && labellingEl.innerText !== '') {
+          this.label = labellingEl.innerText;
+        }
+      }
+
+      this._observeMutations();
+    },
+    get: function get() {
+      return this._focusableElement.getAttribute('aria-labelledby');
+    }
+  }, {
+    key: "label",
+    get: function get() {
+      return this._focusableElement.getAttribute('aria-label');
+    },
+    set: function set(theLabel) {
+      this._unobserveMutations();
+
+      this._focusableElement.setAttribute('aria-label', theLabel);
 
       this._observeMutations();
     }

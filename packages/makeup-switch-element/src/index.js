@@ -5,6 +5,7 @@ class MakeupSwitchElement extends HTMLElement {
         return [
             'checked',
             'disabled',
+            'label',
             'labelledby'
         ];
     }
@@ -25,6 +26,9 @@ class MakeupSwitchElement extends HTMLElement {
                 break;
             case 'disabled':
                 this.model.disabled = (newVal === null);
+                break;
+            case 'label':
+                this.model.label = newVal;
                 break;
             case 'labelledby':
                 this.model.labelledby = newVal;

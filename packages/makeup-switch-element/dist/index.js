@@ -59,6 +59,10 @@ var MakeupSwitchElement = /*#__PURE__*/function (_HTMLElement) {
           this.model.disabled = newVal === null;
           break;
 
+        case 'label':
+          this.model.label = newVal;
+          break;
+
         case 'labelledby':
           this.model.labelledby = newVal;
           break;
@@ -70,7 +74,7 @@ var MakeupSwitchElement = /*#__PURE__*/function (_HTMLElement) {
   }], [{
     key: "observedAttributes",
     get: function get() {
-      return ['checked', 'disabled', 'labelledby'];
+      return ['checked', 'disabled', 'label', 'labelledby'];
     }
   }]);
 
