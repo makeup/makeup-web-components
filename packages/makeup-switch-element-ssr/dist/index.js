@@ -30,16 +30,14 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 var MakeupSwitchClass = require('makeup-switch-class');
 
-var MakeupSwitchElement = /*#__PURE__*/function (_HTMLElement) {
-  _inherits(MakeupSwitchElement, _HTMLElement);
+var MakeupSwitchElementSSR = /*#__PURE__*/function (_HTMLElement) {
+  _inherits(MakeupSwitchElementSSR, _HTMLElement);
 
-  var _super = _createSuper(MakeupSwitchElement);
+  var _super = _createSuper(MakeupSwitchElementSSR);
 
-  _createClass(MakeupSwitchElement, [{
+  _createClass(MakeupSwitchElementSSR, [{
     key: "connectedCallback",
     value: function connectedCallback(e) {
-      this.removeAttribute('placeholder');
-
       this.model._observeEvents();
     }
   }, {
@@ -78,27 +76,20 @@ var MakeupSwitchElement = /*#__PURE__*/function (_HTMLElement) {
     }
   }]);
 
-  function MakeupSwitchElement() {
+  function MakeupSwitchElementSSR() {
     var _this;
 
-    _classCallCheck(this, MakeupSwitchElement);
+    _classCallCheck(this, MakeupSwitchElementSSR);
 
-    _this = _super.call(this);
+    _this = _super.call(this); // this.attachShadow({ mode: 'open' });
 
-    var shadowRoot = _this.attachShadow({
-      mode: 'open'
-    });
-
-    var tmpl = document.createElement('template');
-    tmpl.innerHTML = "\n<style>\n  .makeup-switch {\n    --switch-background-color-unchecked: #767676;\n    --switch-background-color-checked: #382aef;\n    --switch-background-color-disabled: #c7c7c7;\n    --switch-foreground-color: #fff;\n  }\n  @media (prefers-color-scheme: dark) {\n    .makeup-switch {\n      --switch-background-color-checked: #5192ff;\n    }\n  }\n  .makeup-switch {\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    height: 40px;\n    position: relative;\n    vertical-align: middle;\n  }\n  div.makeup-switch {\n    display: -webkit-box;\n    display: flex;\n  }\n  span.makeup-switch {\n    display: -webkit-inline-box;\n    display: inline-flex;\n  }\n  span.makeup-switch__button {\n    align-self: center;\n    background: gray none repeat scroll 0 0;\n    background-color: #767676;\n    background-color: var(--switch-background-color-unchecked, #767676);\n    border-radius: 400px;\n    color: transparent;\n    display: inline-block;\n    height: 24px;\n    position: relative;\n    text-indent: 100%;\n    -webkit-transition: left 0.15s ease-out 0s;\n    transition: left 0.15s ease-out 0s;\n    width: 40px;\n  }\n  span.makeup-switch__button::after {\n    background: white none repeat scroll 0 0;\n    background-color: #fff;\n    background-color: var(--switch-foreground-color, #fff);\n    border-radius: 50%;\n    content: \"\";\n    display: block;\n    height: 18px;\n    left: 3px;\n    position: absolute;\n    top: 3px;\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n    -webkit-transition: left 0.15s ease-out 0s;\n    transition: left 0.15s ease-out 0s;\n    width: 18px;\n  }\n  input.makeup-switch__control,\n  span.makeup-switch__control {\n    height: 24px;\n    left: 0;\n    margin: 0;\n    padding: 0;\n    position: absolute;\n    top: 8px;\n    width: 40px;\n    z-index: 1;\n  }\n  input.makeup-switch__control {\n    opacity: 0;\n  }\n  input.makeup-switch__control:focus + span.makeup-switch__button {\n    outline: 1px dotted #767676;\n  }\n  input.makeup-switch__control[disabled] + span.makeup-switch__button {\n    background-color: #c7c7c7;\n    background-color: var(--switch-background-color-disabled, #c7c7c7);\n  }\n  input.makeup-switch__control:checked + span.makeup-switch__button::after {\n    left: 19px;\n  }\n  span.makeup-switch__control[aria-disabled=\"true\"] + span.makeup-switch__button {\n    background-color: #c7c7c7;\n    background-color: var(--switch-background-color-disabled, #c7c7c7);\n  }\n  span.makeup-switch__control[aria-checked=\"true\"] + span.makeup-switch__button::after {\n    left: 19px;\n  }\n  input.makeup-switch__control:not([disabled]):checked + span.makeup-switch__button,\n  span.makeup-switch__control:not([aria-disabled=\"true\"])[aria-checked=\"true\"] + span.makeup-switch__button {\n    background-color: #3665f3;\n    background-color: var(--switch-background-color-checked, #3665f3);\n  }\n  @media screen and (-ms-high-contrast: active) {\n    input.makeup-switch__control {\n      opacity: 1;\n    }\n  }\n</style>\n\n<span class=\"makeup-switch\">\n    <span class=\"makeup-switch__control\" role=\"switch\" tabindex=\"0\" aria-checked=\"false\"></span>\n    <span class=\"makeup-switch__button\"></span>\n</span>\n        ";
-    shadowRoot.appendChild(tmpl.content.cloneNode(true));
     _this.model = new MakeupSwitchClass(_this.shadowRoot.querySelector('.makeup-switch'), {
       customElementMode: true
     });
     return _this;
   }
 
-  return MakeupSwitchElement;
+  return MakeupSwitchElementSSR;
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
 
-window.customElements.define('makeup-switch', MakeupSwitchElement);
+window.customElements.define('makeup-switch-ssr', MakeupSwitchElementSSR);

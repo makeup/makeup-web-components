@@ -1,0 +1,22 @@
+{
+  "name": "makeup-switch-element-ssr",
+  "description": "A declarative web component representing an ARIA switch",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "repository": "https://github.com/makeup-ui/makeup-ui/tree/master/packages/makeup-switch-element-ssr",
+  "author": "Ian McBurnie <ianmcburnie@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "compile": "babel src/index.js --out-file dist/index.js"
+  },
+  "dependencies": {
+    "makeup-switch-class": "~0.0.4"
+  },
+  "files": [
+    "index.js",
+    "package-lock.json"
+  ],
+  "browserslist": [
+    "extends @ebay/browserslist-config"
+  ]
+}

@@ -13,7 +13,7 @@
         "compile:docs": "babel docs --out-dir docs --out-file-extension .compiled.js --ignore 'docs/**/*.compiled.js','docs/**/*.min.js'",
         "compile:modules": "lerna run compile",
         "lint": "eslint packages/**/src/index.js > lint.log",
-        "server": "browser-sync start -s --ss docs --index docs/index.html --files docs/**/index.html docs/**/index.min.js",
+        "server": "browser-sync start -s --ss docs --index docs/index.html --files docs/**/index.html docs/**/index.min.js --port 80",
         "start": "npm run build && run-p server watch",
         "watch": "onchange packages/**/src/index.js docs/**/index.js -- npm run build"
     },

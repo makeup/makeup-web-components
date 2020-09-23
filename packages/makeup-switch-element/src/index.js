@@ -41,9 +41,11 @@ class MakeupSwitchElement extends HTMLElement {
     constructor() {
         super();
 
-        this.attachShadow({ mode: 'open' });
+        const shadowRoot = this.attachShadow({ mode: 'open' });
 
-        this.shadowRoot.innerHTML = `
+        const tmpl = document.createElement('template');
+
+        tmpl.innerHTML = `
 <style>
   .makeup-switch {
     --switch-background-color-unchecked: #767676;
@@ -151,6 +153,8 @@ class MakeupSwitchElement extends HTMLElement {
     <span class="makeup-switch__button"></span>
 </span>
         `;
+
+        shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
         this.model = new MakeupSwitchClass(this.shadowRoot.querySelector('.makeup-switch'), {
             customElementMode: true
