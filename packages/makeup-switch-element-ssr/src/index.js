@@ -11,6 +11,7 @@ class MakeupSwitchElementSSR extends HTMLElement {
     }
 
     connectedCallback(e) {
+        // this.removeAttribute('placeholder');
         this.model._observeEvents();
     }
 
@@ -21,10 +22,10 @@ class MakeupSwitchElementSSR extends HTMLElement {
     attributeChangedCallback(attr, oldVal, newVal) {
         switch (attr) {
             case 'checked':
-                this.model.checked = (newVal === null);
+                this.model.checked = (newVal !== null);
                 break;
             case 'disabled':
-                this.model.disabled = (newVal === null);
+                this.model.disabled = (newVal !== null);
                 break;
             case 'label':
                 this.model.label = newVal;

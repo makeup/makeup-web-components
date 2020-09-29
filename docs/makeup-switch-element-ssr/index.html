@@ -17,11 +17,11 @@
             <ul>
                 <li>
                     <span id="label1">makeup-switch 1</span>
-                    <makeup-switch-ssr labelledby="label1" checked>
+                    <makeup-switch-ssr labelledby="label1">
                         <template shadowroot="open">
                             <link href="../makeup-switch-style/switch.css" rel="stylesheet" />
                             <span class="makeup-switch">
-                                <span class="makeup-switch__control" role="switch" tabindex="0" aria-checked="false"></span>
+                                <span class="makeup-switch__control" role="switch" tabindex="0"></span>
                                 <span class="makeup-switch__button"></span>
                             </span>
                         </template>
@@ -29,11 +29,39 @@
                 </li>
                 <li>
                     <span id="label2">makeup-switch 2</span>
-                    <!-- <makeup-switch-ssr labelledby="label2" placeholder="true"></makeup-switch-ssr> -->
+                    <makeup-switch-ssr labelledby="label2" checked>
+                        <template shadowroot="open">
+                            <link href="../makeup-switch-style/switch.css" rel="stylesheet" />
+                            <span class="makeup-switch">
+                                <span class="makeup-switch__control" role="switch" tabindex="0"></span>
+                                <span class="makeup-switch__button"></span>
+                            </span>
+                        </template>
+                    </makeup-switch-ssr>
                 </li>
                 <li>
                     <span id="label3">makeup-switch 3</span>
-                    <!-- <makeup-switch-ssr labelledby="label3" placeholder="true"></makeup-switch-ssr> -->
+                    <makeup-switch-ssr labelledby="label3" disabled>
+                        <template shadowroot="open">
+                            <link href="../makeup-switch-style/switch.css" rel="stylesheet" />
+                            <span class="makeup-switch">
+                                <span class="makeup-switch__control" role="switch" tabindex="0"></span>
+                                <span class="makeup-switch__button"></span>
+                            </span>
+                        </template>
+                    </makeup-switch-ssr>
+                </li>
+                <li>
+                    <span id="label4">makeup-switch 4</span>
+                    <makeup-switch-ssr labelledby="label4" checked disabled>
+                        <template shadowroot="open">
+                            <link href="../makeup-switch-style/switch.css" rel="stylesheet" />
+                            <span class="makeup-switch">
+                                <span class="makeup-switch__control" role="switch" tabindex="0"></span>
+                                <span class="makeup-switch__button"></span>
+                            </span>
+                        </template>
+                    </makeup-switch-ssr>
                 </li>
             </ul>
         </main>
