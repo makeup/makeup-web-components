@@ -20,7 +20,7 @@ function _wrapNativeSuper(Class) { var _cache = typeof Map === "function" ? new 
 
 function _construct(Parent, args, Class) { if (_isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _isNativeFunction(fn) { return Function.toString.call(fn).indexOf("[native code]") !== -1; }
 
@@ -34,6 +34,19 @@ var MakeupSwitchElementSSR = /*#__PURE__*/function (_HTMLElement) {
   _inherits(MakeupSwitchElementSSR, _HTMLElement);
 
   var _super = _createSuper(MakeupSwitchElementSSR);
+
+  function MakeupSwitchElementSSR() {
+    var _this;
+
+    _classCallCheck(this, MakeupSwitchElementSSR);
+
+    _this = _super.call(this); // this.attachShadow({ mode: 'open' });
+
+    _this.model = new MakeupSwitchClass(_this.shadowRoot.querySelector('.makeup-switch'), {
+      customElementMode: true
+    });
+    return _this;
+  }
 
   _createClass(MakeupSwitchElementSSR, [{
     key: "connectedCallback",
@@ -76,19 +89,6 @@ var MakeupSwitchElementSSR = /*#__PURE__*/function (_HTMLElement) {
       return ['checked', 'disabled', 'label', 'labelledby'];
     }
   }]);
-
-  function MakeupSwitchElementSSR() {
-    var _this;
-
-    _classCallCheck(this, MakeupSwitchElementSSR);
-
-    _this = _super.call(this); // this.attachShadow({ mode: 'open' });
-
-    _this.model = new MakeupSwitchClass(_this.shadowRoot.querySelector('.makeup-switch'), {
-      customElementMode: true
-    });
-    return _this;
-  }
 
   return MakeupSwitchElementSSR;
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
