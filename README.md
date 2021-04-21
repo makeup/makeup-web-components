@@ -1,9 +1,12 @@
 # makeup-ui
 
-Experimental testing ground for accessible web components (mono-repo).
+Experimental testing ground for accessible UI components.
 
-## ARIA Switch
+## UI Components
 
-* Class: [readme](packages/makeup-switch-class) | [source](packages/makeup-switch-class/src/index.js) | [demo](https://makeup.github.io/makeup-ui/makeup-switch-class/index.html)
-* Element: [readme](packages/makeup-switch-element) | [source](packages/makeup-switch-element/src/index.js) | [demo](https://makeup.github.io/makeup-ui/makeup-switch-element/index.html)
-* Template: [readme](packages/makeup-switch-element-ssr) | [source](packages/makeup-switch-element-ssr/src/index.js) | [demo](https://makeup.github.io/makeup-ui/makeup-switch-element-ssr/index.html)
+* Switch: [readme](packages/makeup-switch-class) | [source](packages/makeup-switch-class/src/index.js) | [demo](https://makeup.github.io/makeup-ui/makeup-switch-class/index.html)
+
+## Experiments (archived)
+
+* Switch Web Component: [readme](packages/makeup-switch-element) | [source](packages/makeup-switch-element/src/index.js) | [demo](https://makeup.github.io/makeup-ui/makeup-switch-element/index.html)
+* Switch Web Component SSR: [readme](packages/makeup-switch-element) | [source](packages/makeup-switch-element/src/index.js) | [demo](https://makeup.github.io/makeup-ui/makeup-switch-element/index.html)

@@ -1,3 +1,3 @@
-# makeup-switch-element-ssr
+# makeup-switch-element-ssr (archived)
 
-SSR implementation of switch web component (work in progress).
+SSR implementation of switch web component. Requires a chrome original trial certificate.

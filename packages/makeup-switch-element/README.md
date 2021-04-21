@@ -2,6 +2,8 @@
 
 An HTML custom element (aka Web Component) that represents an ARIA switch.
 
+This custom element utilises the [makeup-switch-class]('../makeup-switch-class') for all of its logic.
+
 ## Example
 
 Markup:
