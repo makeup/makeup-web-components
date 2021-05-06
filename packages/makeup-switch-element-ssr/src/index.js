@@ -1,4 +1,4 @@
-const MakeupSwitchClass = require('makeup-switch-class');
+const MakeupSwitch = require('makeup-switch');
 
 class MakeupSwitchElementSSR extends HTMLElement {
     static get observedAttributes() {
@@ -43,7 +43,7 @@ class MakeupSwitchElementSSR extends HTMLElement {
 
         // this.attachShadow({ mode: 'open' });
 
-        this.model = new MakeupSwitchClass(this.shadowRoot.querySelector('.makeup-switch'), {
+        this.model = new MakeupSwitch(this.shadowRoot.querySelector('.switch'), {
             customElementMode: true
         });
     }

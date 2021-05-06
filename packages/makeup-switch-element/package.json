@@ -10,7 +10,7 @@
     "compile": "babel src/index.js --out-file dist/index.js"
   },
   "dependencies": {
-    "makeup-switch-class": "~0.0.4"
+    "makeup-switch": "~0.0.1"
   },
   "files": [
     "index.js",

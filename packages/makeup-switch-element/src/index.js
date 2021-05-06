@@ -1,4 +1,4 @@
-const MakeupSwitchClass = require('makeup-switch-class');
+const MakeupSwitch = require('makeup-switch');
 
 class MakeupSwitchElement extends HTMLElement {
     static get observedAttributes() {
@@ -47,33 +47,33 @@ class MakeupSwitchElement extends HTMLElement {
 
         tmpl.innerHTML = `
 <style>
-  .makeup-switch {
+  .switch {
     --switch-background-color-unchecked: #767676;
     --switch-background-color-checked: #382aef;
     --switch-background-color-disabled: #c7c7c7;
     --switch-foreground-color: #fff;
   }
   @media (prefers-color-scheme: dark) {
-    .makeup-switch {
+    .switch {
       --switch-background-color-checked: #5192ff;
     }
   }
-  .makeup-switch {
+  .switch {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     height: 40px;
     position: relative;
     vertical-align: middle;
   }
-  div.makeup-switch {
+  div.switch {
     display: -webkit-box;
     display: flex;
   }
-  span.makeup-switch {
+  span.switch {
     display: -webkit-inline-box;
     display: inline-flex;
   }
-  span.makeup-switch__button {
+  span.switch__button {
     align-self: center;
     background: gray none repeat scroll 0 0;
     background-color: #767676;
@@ -88,7 +88,7 @@ class MakeupSwitchElement extends HTMLElement {
     transition: left 0.15s ease-out 0s;
     width: 40px;
   }
-  span.makeup-switch__button::after {
+  span.switch__button::after {
     background: white none repeat scroll 0 0;
     background-color: #fff;
     background-color: var(--switch-foreground-color, #fff);
@@ -105,8 +105,8 @@ class MakeupSwitchElement extends HTMLElement {
     transition: left 0.15s ease-out 0s;
     width: 18px;
   }
-  input.makeup-switch__control,
-  span.makeup-switch__control {
+  input.switch__control,
+  span.switch__control {
     height: 24px;
     left: 0;
     margin: 0;
@@ -116,47 +116,47 @@ class MakeupSwitchElement extends HTMLElement {
     width: 40px;
     z-index: 1;
   }
-  input.makeup-switch__control {
+  input.switch__control {
     opacity: 0;
   }
-  input.makeup-switch__control:focus + span.makeup-switch__button {
+  input.switch__control:focus + span.switch__button {
     outline: 1px dotted #767676;
   }
-  input.makeup-switch__control[disabled] + span.makeup-switch__button {
+  input.switch__control[disabled] + span.switch__button {
     background-color: #c7c7c7;
     background-color: var(--switch-background-color-disabled, #c7c7c7);
   }
-  input.makeup-switch__control:checked + span.makeup-switch__button::after {
+  input.switch__control:checked + span.switch__button::after {
     left: 19px;
   }
-  span.makeup-switch__control[aria-disabled="true"] + span.makeup-switch__button {
+  span.switch__control[aria-disabled="true"] + span.switch__button {
     background-color: #c7c7c7;
     background-color: var(--switch-background-color-disabled, #c7c7c7);
   }
-  span.makeup-switch__control[aria-checked="true"] + span.makeup-switch__button::after {
+  span.switch__control[aria-checked="true"] + span.switch__button::after {
     left: 19px;
   }
-  input.makeup-switch__control:not([disabled]):checked + span.makeup-switch__button,
-  span.makeup-switch__control:not([aria-disabled="true"])[aria-checked="true"] + span.makeup-switch__button {
+  input.switch__control:not([disabled]):checked + span.switch__button,
+  span.switch__control:not([aria-disabled="true"])[aria-checked="true"] + span.switch__button {
     background-color: #3665f3;
     background-color: var(--switch-background-color-checked, #3665f3);
   }
   @media screen and (-ms-high-contrast: active) {
-    input.makeup-switch__control {
+    input.switch__control {
       opacity: 1;
     }
   }
 </style>
 
-<span class="makeup-switch">
-    <span class="makeup-switch__control" role="switch" tabindex="0" aria-checked="false"></span>
-    <span class="makeup-switch__button"></span>
+<span class="switch">
+    <span class="switch__control" role="switch" tabindex="0" aria-checked="false"></span>
+    <span class="switch__button"></span>
 </span>
         `;
 
         shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
-        this.model = new MakeupSwitchClass(this.shadowRoot.querySelector('.makeup-switch'), {
+        this.model = new MakeupSwitch(this.shadowRoot.querySelector('.switch'), {
             customElementMode: true
         });
     }

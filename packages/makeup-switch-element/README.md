@@ -2,7 +2,7 @@
 
 An HTML custom element (aka Web Component) that represents an ARIA switch.
 
-This custom element utilises the [makeup-switch-class]('../makeup-switch-class') for all of its logic.
+This custom element utilises the [makeup-switch](https://github.com/makeup/makeup-js/tree/master/packages/makeup-switch) for all of its logic.
 
 ## Example
 

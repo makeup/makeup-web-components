@@ -1,12 +1,13 @@
-# makeup-ui
+# makeup-web-components (archived)
 
-Experimental testing ground for accessible UI components.
+Experimental testing ground for accessible web components built on top of [makeup-js](https://github.com/makeup/makeup-js).
 
-## UI Components
+## Client-Side Web Components (archived)
 
-* Switch: [readme](packages/makeup-switch-class) | [source](packages/makeup-switch-class/src/index.js) | [demo](https://makeup.github.io/makeup-ui/makeup-switch-class/index.html)
+* Switch: [source](packages/makeup-switch-element/src/index.js) | [demo](https://makeup.github.io/makeup-ui/makeup-switch-element/index.html)
 
-## Experiments (archived)
+## Server-Side Web Components (archived)
 
-* Switch Web Component: [readme](packages/makeup-switch-element) | [source](packages/makeup-switch-element/src/index.js) | [demo](https://makeup.github.io/makeup-ui/makeup-switch-element/index.html)
-* Switch Web Component SSR: [readme](packages/makeup-switch-element) | [source](packages/makeup-switch-element/src/index.js) | [demo](https://makeup.github.io/makeup-ui/makeup-switch-element/index.html)
+NOTE: the origin-trial certificate that enable these SSR experiments has expired.
+
+* Switch SSR: [source](packages/makeup-switch-element-ssr/src/index.js) | [demo](https://makeup.github.io/makeup-ui/makeup-switch-element-ssr/index.html)

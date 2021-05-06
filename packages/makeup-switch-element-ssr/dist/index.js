@@ -28,7 +28,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var MakeupSwitchClass = require('makeup-switch-class');
+var MakeupSwitch = require('makeup-switch');
 
 var MakeupSwitchElementSSR = /*#__PURE__*/function (_HTMLElement) {
   _inherits(MakeupSwitchElementSSR, _HTMLElement);
@@ -42,7 +42,7 @@ var MakeupSwitchElementSSR = /*#__PURE__*/function (_HTMLElement) {
 
     _this = _super.call(this); // this.attachShadow({ mode: 'open' });
 
-    _this.model = new MakeupSwitchClass(_this.shadowRoot.querySelector('.makeup-switch'), {
+    _this.model = new MakeupSwitch(_this.shadowRoot.querySelector('.switch'), {
       customElementMode: true
     });
     return _this;
