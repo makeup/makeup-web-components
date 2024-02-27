@@ -18,21 +18,20 @@
         "watch": "onchange packages/**/src/index.js docs/**/index.js -- npm run build"
     },
     "devDependencies": {
-        "@babel/cli": "^7.13.16",
-        "@babel/core": "^7.14.0",
-        "@babel/preset-env": "^7.14.1",
-        "@ebay/browserslist-config": "1.2.0",
+        "@babel/cli": "^7.23.9",
+        "@babel/core": "^7.23.9",
+        "@babel/preset-env": "^7.23.9",
+        "@ebay/browserslist-config": "2.7.0",
         "babel-plugin-transform-object-assign": "^6",
-        "browser-sync": "^2.26.14",
-        "core-js-pure": "^3.11.3",
-        "eslint": "^7.25.0",
-        "eslint-config-ebay": "^1",
+        "browser-sync": "^3.0.2",
+        "core-js-pure": "^3.36.0",
+        "eslint": "^8.57.0",
+        "eslint-config-ebay": "^1.1.5",
         "lerna": "^4.0.0",
-        "nodelist-foreach-polyfill": "^1",
         "npm-run-all": "^4",
         "onchange": "^7.1.0",
-        "webpack": "^5.36.2",
-        "webpack-cli": "^4.6.0"
+        "webpack": "^5.90.3",
+        "webpack-cli": "^5.1.4"
     },
     "browserslist": [
         "extends @ebay/browserslist-config"

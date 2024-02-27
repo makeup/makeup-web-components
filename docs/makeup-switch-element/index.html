@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>makeup-switch-element</title>
         <link href="../makeup-switch-style/docs.css" rel="stylesheet" />
         <!-- <link href="../makeup-switch-style/theme-1.css" rel="stylesheet" /> -->
@@ -12,22 +13,75 @@
             <h1>makeup-switch-element</h1>
         </header>
         <main>
+            <h2>Declarative</h2>
             <ul>
                 <li>
                     <span id="label1">makeup-switch 1</span>
-                    <makeup-switch labelledby="label1" placeholder="true"></makeup-switch>
+                    <makeup-switch labelledby="label1">
+                        <template shadowrootmode="open">
+                            <link href="../makeup-switch-style/switch.css" rel="stylesheet" />
+                            <span class="switch">
+                                <span class="switch__control" role="switch" tabindex="0"></span>
+                                <span class="switch__button"></span>
+                            </span>
+                        </template>
+                    </makeup-switch>
                 </li>
                 <li>
                     <span id="label2">makeup-switch 2</span>
-                    <makeup-switch labelledby="label2" placeholder="true" checked></makeup-switch>
+                    <makeup-switch labelledby="label2" checked>
+                        <template shadowrootmode="open">
+                            <link href="../makeup-switch-style/switch.css" rel="stylesheet" />
+                            <span class="switch">
+                                <span class="switch__control" role="switch" tabindex="0"></span>
+                                <span class="switch__button"></span>
+                            </span>
+                        </template>
+                    </makeup-switch>
                 </li>
                 <li>
                     <span id="label3">makeup-switch 3</span>
-                    <makeup-switch labelledby="label3" placeholder="true" disabled></makeup-switch>
+                    <makeup-switch labelledby="label3" disabled>
+                        <template shadowrootmode="open">
+                            <link href="../makeup-switch-style/switch.css" rel="stylesheet" />
+                            <span class="switch">
+                                <span class="switch__control" role="switch" tabindex="0"></span>
+                                <span class="switch__button"></span>
+                            </span>
+                        </template>
+                    </makeup-switch>
                 </li>
                 <li>
                     <span id="label4">makeup-switch 4</span>
-                    <makeup-switch labelledby="label4" placeholder="true" checked disabled></makeup-switch>
+                    <makeup-switch labelledby="label4" checked disabled>
+                        <template shadowrootmode="open">
+                            <link href="../makeup-switch-style/switch.css" rel="stylesheet" />
+                            <span class="switch">
+                                <span class="switch__control" role="switch" tabindex="0"></span>
+                                <span class="switch__button"></span>
+                            </span>
+                        </template>
+                    </makeup-switch>
+                </li>
+            </ul>
+
+            <h2>Imperative</h2>
+            <ul>
+                <li>
+                    <span id="label5">makeup-switch 5</span>
+                    <makeup-switch labelledby="label5" placeholder="true"></makeup-switch>
+                </li>
+                <li>
+                    <span id="label6">makeup-switch 6</span>
+                    <makeup-switch labelledby="label6" placeholder="true" checked></makeup-switch>
+                </li>
+                <li>
+                    <span id="label7">makeup-switch 7</span>
+                    <makeup-switch labelledby="label7" placeholder="true" disabled></makeup-switch>
+                </li>
+                <li>
+                    <span id="label8">makeup-switch 8</span>
+                    <makeup-switch labelledby="label8" placeholder="true" checked disabled></makeup-switch>
                 </li>
             </ul>
         </main>

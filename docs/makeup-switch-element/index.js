@@ -1,6 +1,3 @@
-// requires NodeList.forEach polyfill for IE
-require('nodelist-foreach-polyfill');
-
 const MakeupSwitchElement = require('../../packages/makeup-switch-element');
 
 window.onload = function() {
