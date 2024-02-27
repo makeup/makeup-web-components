@@ -1,9 +1,9 @@
-makeup-switch[placeholder="true"] {
+makeup-switch[skeleton="true"] {
     align-items: center;
     display: inline-flex;
     height: 40px;
 }
-makeup-switch[placeholder="true"]::after {
+makeup-switch[skeleton="true"]::after {
     background-color: #eee;
     border-radius: 400px;
     content: '';

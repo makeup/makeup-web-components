@@ -11,7 +11,7 @@ class MakeupSwitchElement extends HTMLElement {
     }
 
     connectedCallback(e) {
-        this.removeAttribute('placeholder');
+        this.removeAttribute('skeleton');
         this.model._observeEvents();
     }
 

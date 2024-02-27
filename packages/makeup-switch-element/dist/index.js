@@ -6,7 +6,7 @@ class MakeupSwitchElement extends HTMLElement {
     return ['checked', 'disabled', 'label', 'labelledby'];
   }
   connectedCallback(e) {
-    this.removeAttribute('placeholder');
+    this.removeAttribute('skeleton');
     this.model._observeEvents();
   }
   disconnectedCallback(e) {
