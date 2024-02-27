@@ -1,5 +1,6 @@
 {
     "name": "root",
+    "workspaces": ["packages/*"],
     "private": true,
     "keywords": [
         "accessibility",
@@ -27,7 +28,7 @@
         "core-js-pure": "^3.36.0",
         "eslint": "^8.57.0",
         "eslint-config-ebay": "^1.1.5",
-        "lerna": "^4.0.0",
+        "lerna": "^8.1.2",
         "npm-run-all": "^4",
         "onchange": "^7.1.0",
         "webpack": "^5.90.3",
