@@ -1,6 +1,8 @@
 {
     "name": "root",
-    "workspaces": ["packages/*"],
+    "workspaces": [
+        "packages/*"
+    ],
     "private": true,
     "keywords": [
         "accessibility",
@@ -26,9 +28,11 @@
         "babel-plugin-transform-object-assign": "^6",
         "browser-sync": "^3.0.2",
         "core-js-pure": "^3.36.0",
+        "css-loader": "^6.10.0",
         "eslint": "^8.57.0",
         "eslint-config-ebay": "^1.1.5",
         "lerna": "^8.1.2",
+        "mini-css-extract-plugin": "^2.8.1",
         "npm-run-all": "^4",
         "onchange": "^7.1.0",
         "webpack": "^5.90.3",

@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     devtool: 'source-map',
@@ -12,5 +13,18 @@ module.exports = {
     output: {
         filename: '[name]/index.min.js',
         path: path.resolve(__dirname, './docs')
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+          filename: "[name]/[name].css",
+        })
+    ],
+    module: {
+        rules: [
+          {
+            test: /\.css$/i,
+            use: [MiniCssExtractPlugin.loader, "css-loader"],
+          }
+        ]
     }
 };

@@ -1,5 +1,7 @@
 "use strict";
 
+require("../../packages/makeup-switch-element/src/index.css");
+require("../../packages/makeup-switch-element/src/skeleton.css");
 const MakeupSwitchElement = require('../../packages/makeup-switch-element');
 window.onload = function () {
   document.querySelectorAll('makeup-switch').forEach(function (el, i) {
