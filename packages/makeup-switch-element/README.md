@@ -10,7 +10,7 @@ Markup:
 
 ```html
 <span id="label1">makeup-switch 1</span>
-<makeup-switch labelledby="label1" placeholder="true"></makeup-switch>
+<makeup-switch labelledby="label1" skeleton="true"></makeup-switch>
 ```
 
 Style:
@@ -46,19 +46,19 @@ The accessible label text. NOTE: `labelledby` is preferred.
 
 The `id` of the labelling element.
 
-### placeholder
+### skeleton
 
-Set to `true` to render a placeholder style while in non-JavaScript state.
+Set to `true` to render a skeleton style while in non-JavaScript state.
 
 Example placeholder style:
 
 ```css
-makeup-switch[placeholder="true"] {
+makeup-switch[skeleton="true"] {
     align-items: center;
     display: inline-flex;
     height: 40px;
 }
-makeup-switch[placeholder="true"]::after {
+makeup-switch[skeleton="true"]::after {
     background-color: #eee;
     border-radius: 400px;
     content: '';

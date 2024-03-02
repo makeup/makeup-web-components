@@ -7,7 +7,7 @@
   "author": "Ian McBurnie <ianmcburnie@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "compile": "esbuild src/*.js --bundle --outdir=dist --format=esm"
+    "compile": "esbuild src/index.js --bundle --outdir=dist --format=esm"
   },
   "dependencies": {
     "makeup-switch": "~0.2.0"
