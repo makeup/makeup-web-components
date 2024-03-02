@@ -1,4 +1,4 @@
-import MakeupSwitchElement from "../../packages/makeup-switch-element";
+import MakeupSwitchElement from "makeup-switch-element";
 import "../../packages/makeup-switch-element/src/index.css";
 import "../../packages/makeup-switch-element/src/skeleton.css";
 

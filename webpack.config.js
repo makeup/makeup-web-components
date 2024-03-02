@@ -11,7 +11,7 @@ module.exports = {
         minimize: true
     },
     output: {
-        filename: '[name]/index.min.js',
+        filename: '[name]/bundle.js',
         path: path.resolve(__dirname, './docs')
     },
     plugins: [

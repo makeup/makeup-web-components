@@ -7,13 +7,13 @@
   "author": "Ian McBurnie <ianmcburnie@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "compile": "babel src/index.js --out-file dist/index.js"
+    "compile": "babel src/*.js --out-dir dist"
   },
   "dependencies": {
     "makeup-switch": "~0.2.0"
   },
   "files": [
-    "index.js",
+    "dist",
     "package-lock.json"
   ],
   "browserslist": [
