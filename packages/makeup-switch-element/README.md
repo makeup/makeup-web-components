@@ -27,7 +27,7 @@ The following custom properties are available:
 Script:
 
 ```js
-const MakeupSwitchElement = require('makeup-switch-element');
+import MakeupSwitchElement from 'makeup-switch-element';
 
 document.querySelectorAll('makeup-switch').forEach(function(el, i) {
     el.addEventListener('makeup-switch-toggle', function(e) {

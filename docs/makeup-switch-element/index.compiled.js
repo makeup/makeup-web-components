@@ -1,8 +1,9 @@
 "use strict";
 
+var _makeupSwitchElement = _interopRequireDefault(require("../../packages/makeup-switch-element"));
 require("../../packages/makeup-switch-element/src/index.css");
 require("../../packages/makeup-switch-element/src/skeleton.css");
-const MakeupSwitchElement = require('../../packages/makeup-switch-element');
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 window.onload = function () {
   document.querySelectorAll('makeup-switch').forEach(function (el, i) {
     console.log(el, i);

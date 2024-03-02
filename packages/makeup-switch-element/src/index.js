@@ -1,4 +1,4 @@
-const MakeupSwitch = require('makeup-switch').default;
+import MakeupSwitch from 'makeup-switch';
 
 class MakeupSwitchElement extends HTMLElement {
     static get observedAttributes() {
